@@ -17,7 +17,19 @@ class Igrushka:
         self.name = name
         self.color = color
         self.type = type
-        print(self.name,self.color,self.type)
+        self.Zakup()
+        self.Poshiv()
+        self.Okraska()
+        print(self.name, self.color, self.type)
+
+    def Zakup(self):
+        print('Закуп сырья')
+
+    def Poshiv(self):
+        print('Пошив')
+
+    def Okraska(self):
+        print('Окраска')
 
 
 class Animals(Igrushka):
@@ -35,23 +47,15 @@ class Multfilm(Igrushka):
 class Fabrika(Igrushka):
     def __init__(self, name, color, type):
         super().__init__(name, color, type)
+        self.SelectType(self)
 
     def SelectType(self, type):
         if type == 'Animals':
-            return print(Animals)
+            print(Igrushka('Лошадка', 'Коричневая', type))
         elif type == 'Multfilm':
-            return print(Multfilm)
-
-    def Zakup(self):
-        print('Закуп сырья')
-
-    def Poshiv(self):
-        print('Пошив')
-
-    def Okraska(self):
-        print('Окраска')
+            print(Igrushka('Лошадка', 'Коричневая', type))
 
 
 game = Igrushka('Лошадка', 'Коричневая', 'Animals')
-toy = Fabrika('Лошадка', 'Коричневая', 'Animals')
-toy.SelectType('Animals')
+toy=Fabrika('Кролик', 'Белый', 'Animals')
+
