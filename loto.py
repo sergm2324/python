@@ -51,13 +51,11 @@ import random
 
 class Card:
     def __init__(self, name):
-        bag = [x for x in range(1, 91)]  # Мешок с бочками.
         self.card = [__class__.gen_string(), __class__.gen_string(),
                      __class__.gen_string()]
         self.name = name
         self.count_barrel = 15  # остаток бочек на карточке
 
-    @staticmethod
     def gen_string():
         num = set()  # создаем неповторяющееся множество num
         while len(num) < 5:  # если длина множества меньше колво рядов * 5 (у нас 5 цифр/ряд)
